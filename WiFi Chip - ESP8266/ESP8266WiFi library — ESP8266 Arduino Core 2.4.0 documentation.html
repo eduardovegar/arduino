@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+
+  
+    <link rel="stylesheet" href="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/sphinx_rtd_theme.css" type="text/css">
+  
+
+  
+        <link rel="index" title="Index" href="http://arduino-esp8266.readthedocs.io/en/latest/genindex.html">
+        <link rel="search" title="Search" href="http://arduino-esp8266.readthedocs.io/en/latest/search.html">
+    <link rel="top" title="ESP8266 Arduino Core 2.4.0 documentation" href="http://arduino-esp8266.readthedocs.io/en/latest/index.html">
+        <link rel="next" title="OTA Updates" href="http://arduino-esp8266.readthedocs.io/en/latest/ota_updates/readme.html">
+        <link rel="prev" title="Filesystem" href="http://arduino-esp8266.readthedocs.io/en/latest/filesystem.html"> 
+
+  
+  <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/modernizr.min.js"></script>
+
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html">
+
+<link rel="stylesheet" href="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="text/javascript" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/readthedocs-data.js"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'esp8266wifi/readme' 		
+READTHEDOCS_DATA['source_suffix'] = '.rst'
+</script>
+
+<script type="text/javascript" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/readthedocs-dynamic-include.js"></script>
+
+<!-- end RTD <extrahead> --></head>
+
+<body class="wy-body-for-nav" role="document" style="">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="http://arduino-esp8266.readthedocs.io/en/latest/index.html" class="icon icon-home"> ESP8266 Arduino Core
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="http://arduino-esp8266.readthedocs.io/en/latest/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/installing.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/reference.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/libraries.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/filesystem.html">File system</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#"><span class="toctree-expand"></span>ESP8266WiFi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#introduction"><span class="toctree-expand"></span>Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#quick-start">Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#who-is-who">Who is Who</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#class-description"><span class="toctree-expand"></span>Class Description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#station">Station</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#soft-access-point">Soft Access Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#scan">Scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#client">Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#client-secure">Client Secure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#server">Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#udp">UDP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#generic">Generic</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#diagnostics"><span class="toctree-expand"></span>Diagnostics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#check-return-codes">Check Return Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#use-printdiag">Use printDiag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#enable-wi-fi-diagnostic">Enable Wi-Fi Diagnostic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#enable-debugging-in-ide">Enable Debugging in IDE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#what-s-inside">What’s Inside?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/ota_updates/readme.html">OTA Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/PROGMEM.html">PROGMEM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/boards.html">Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/faq/readme.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/exception_causes.html">Exception causes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/Troubleshooting/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/Troubleshooting/stack_dump.html">Stack Dump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/eclipse/eclipse.html">Using with Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/changes.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      <div class="wy-menu rst-pro"><div class="rst-pro-about"><a href="http://docs.readthedocs.io/en/latest/ethical-advertising.html"><i class="fa fa-info-circle"></i></a></div><a class="rst-pro-image-wrapper" href="http://readthedocs.org/sustainability/click/133/ioRSjkC1xxNY/" target="_blank"><img class="rst-pro-image" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/saved_resource"></a><span>Triplebyte helps software engineers get and negotiate multiple offers at once. <a class="rst-pro-link" href="http://readthedocs.org/sustainability/click/133/ioRSjkC1xxNY/" target="_blank">+$35K avg salary jump</a>.</span></div><div class="rst-pro-wrapper"></div></div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="http://arduino-esp8266.readthedocs.io/en/latest/index.html">ESP8266 Arduino Core</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="http://arduino-esp8266.readthedocs.io/en/latest/index.html">Docs</a> »</li>
+        
+      <li>ESP8266WiFi library</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/esp8266/Arduino/blob/master/doc/esp8266wifi/readme.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="esp8266wifi-library">
+<h1>ESP8266WiFi library<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#esp8266wifi-library" title="Permalink to this headline">¶</a></h1>
+<p>ESP8266 is all about Wi-Fi. If you are eager to connect your new ESP8266 module to Wi-Fi network to start sending and receiving data, this is a good place to start. If you are looking for more in depth details of how to program specific Wi-Fi networking functionality, you are also in the right place.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi">Wi-Fi library for ESP8266</a> has been developed basing on <a class="reference external" href="http://bbs.espressif.com/viewtopic.php?f=51&amp;t=1023">ESP8266 SDK</a>, using naming convention and overall functionality philosophy of <a class="reference external" href="https://www.arduino.cc/en/Reference/WiFi">Arduino WiFi library</a>. Over time the wealth Wi-Fi features ported from ESP9266 SDK to <a class="reference external" href="https://github.com/esp8266/Arduino">esp8266 /
+Adruino</a> outgrow <a class="reference external" href="https://www.arduino.cc/en/Reference/WiFi">Arduino WiFi library</a> and it became apparent that we need to provide separate documentation on what is new and extra.</p>
+<p>This documentation will walk you through several classes, methods and properties of <a class="reference external" href="https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi">ESP8266WiFi</a> library. If you are new to C++ and Arduino, don’t worry. We will start from general concepts and then move to detailed description of members of each particular class including usage examples.</p>
+<p>The scope of functionality offered by <a class="reference external" href="https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi">ESP8266WiFi</a> library is quite extensive and therefore this description has been broken up into separate documents marked with :arrow_right:.</p>
+<div class="section" id="quick-start">
+<h3>Quick Start<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#quick-start" title="Permalink to this headline">¶</a></h3>
+<p>Hopefully you are already familiar how to load <a class="reference external" href="https://github.com/esp8266/Arduino/blob/master/libraries/esp8266/examples/Blink/Blink.ino">Blink.ino</a> sketch to ESP8266 module and get the LED blinking. If not, please check <a class="reference external" href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/using-arduino-ide">this tutorial</a> by Adafruit or <a class="reference external" href="https://learn.sparkfun.com/tutorials/esp8266-thing-hookup-guide/introduction">another great tutorial</a> developed by Sparkfun.</p>
+<p>To hook up ESP module to Wi-Fi (like hooking up a mobile phone to a hot spot), you need just couple of lines of code:</p>
+<div class="code cpp highlight-default"><div class="highlight"><pre><span></span><span class="c1">#include &lt;ESP8266WiFi.h&gt;</span>
+
+<span class="n">void</span> <span class="n">setup</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="o">.</span><span class="n">println</span><span class="p">();</span>
+
+  <span class="n">WiFi</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="s2">"network-name"</span><span class="p">,</span> <span class="s2">"pass-to-network"</span><span class="p">);</span>
+
+  <span class="n">Serial</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">"Connecting"</span><span class="p">);</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">WiFi</span><span class="o">.</span><span class="n">status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">"."</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">Serial</span><span class="o">.</span><span class="n">println</span><span class="p">();</span>
+
+  <span class="n">Serial</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">"Connected, IP address: "</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">WiFi</span><span class="o">.</span><span class="n">localIP</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="n">void</span> <span class="n">loop</span><span class="p">()</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>In the line <code class="docutils literal"><span class="pre">WiFi.begin("network-name",</span> <span class="pre">"pass-to-network")</span></code> replace <code class="docutils literal"><span class="pre">network-name</span></code> and <code class="docutils literal"><span class="pre">pass-to-network</span></code> with name and password to the Wi-Fi network you like to connect. Then upload this sketch to ESP module and open serial monitor. You should see something like:</p>
+<div class="figure" id="id1">
+<img alt="Connection log on Arduino IDE&#39;s Serial Monitor" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/wifi-simple-connect-terminal.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>How does it work? In the first line of sketch <code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;ESP8266WiFi.h&gt;</span></code> we are including <a class="reference external" href="https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi">ESP8266WiFi</a> library. This library provides ESP8266 specific Wi-Fi routines we are calling to connect to network.</p>
+<p>Actual connection to Wi-Fi is initialized by calling:</p>
+<div class="code cpp highlight-default"><div class="highlight"><pre><span></span><span class="n">WiFi</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="s2">"network-name"</span><span class="p">,</span> <span class="s2">"pass-to-network"</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Connection process can take couple of seconds and we are checking for this to complete in the following loop:</p>
+<div class="code cpp highlight-default"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="n">WiFi</span><span class="o">.</span><span class="n">status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">"."</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">while()</span></code> loop will keep looping while <code class="docutils literal"><span class="pre">WiFi.status()</span></code> is other than <code class="docutils literal"><span class="pre">WL_CONNECTED</span></code>. The loop will exit only if the status changes to <code class="docutils literal"><span class="pre">WL_CONNECTED</span></code>.</p>
+<p>The last line will then print out IP address assigned to ESP module by <a class="reference external" href="http://whatismyipaddress.com/dhcp">DHCP</a>:</p>
+<div class="code cpp highlight-default"><div class="highlight"><pre><span></span><span class="n">Serial</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">WiFi</span><span class="o">.</span><span class="n">localIP</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>If you don’t see the last line but just more and more dots <code class="docutils literal"><span class="pre">.........</span></code>, then likely name or password to the Wi-Fi network in sketch is entered incorrectly. Verify name and password by connecting from scratch to this Wi-Fi a PC or a mobile phone.</p>
+<p><em>Note:</em> if connection is established, and then lost for some reason, ESP will automatically reconnect to last used access point once it is again back on-line. This will be done automatically by Wi-Fi library, without any user intervention.</p>
+<p>That’s all you need to connect ESP8266 to Wi-Fi. In the following chapters we will explain what cool things can be done by ESP once connected.</p>
+</div>
+<div class="section" id="who-is-who">
+<h3>Who is Who<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#who-is-who" title="Permalink to this headline">¶</a></h3>
+<p>Devices that connect to Wi-Fi network are called stations (STA). Connection to Wi-Fi is provided by an access point (AP), that acts as a hub for one or more stations. The access point on the other end is connected to a wired network. An access point is usually integrated with a router to provide access from Wi-Fi network to the internet. Each access point is recognized by a SSID (<strong>S</strong>ervice <strong>S</strong>et <strong>ID</strong>entifier), that essentially is the name of network you select when connecting a device (station) to the Wi-Fi.</p>
+<p>ESP8266 module can operate as a station, so we can connect it to the Wi-Fi network. It can also operate as a soft access point (soft-AP), to establish its own Wi-Fi network. Therefore we can connect other stations to such ESP module. ESP8266 is also able to operate both in station and soft access point mode. This provides possibility of building e.g. <a class="reference external" href="https://en.wikipedia.org/wiki/Mesh_networking">mesh networks</a>.</p>
+<div class="figure" id="id2">
+<img alt="ESP8266 operating in the Station + Soft Access Point mode" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/esp8266-station-soft-access-point.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>The <a class="reference external" href="https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi">ESP8266WiFi</a> library provides wide collection of C++
+<a class="reference external" href="https://en.wikipedia.org/wiki/Method_(computer_programming)">methods</a> (functions) and <a class="reference external" href="https://en.wikipedia.org/wiki/Property_(programming)">properties</a> to configure and operate an ESP8266 module in station and / or soft access point mode. They are described in the following chapters.</p>
+</div>
+</div>
+<div class="section" id="class-description">
+<h2>Class Description<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#class-description" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi">ESP8266WiFi</a> library is broken up into several classes. In most of cases, when writing the code, user is not concerned with this classification. We are using it to break up description of this library into more manageable pieces.</p>
+<div class="figure" id="id3">
+<img alt="Index of classes of ESP8266WiFi library" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/doxygen-class-index.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>Chapters below describe all function calls (<a class="reference external" href="https://en.wikipedia.org/wiki/Method_(computer_programming)">methods</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Property_(programming)">properties</a> in C++ terms) listed in particular classes of <a class="reference external" href="https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi">ESP8266WiFi</a>. Description is illustrated with application examples and code snippets to show how to use functions in practice. Most of this information is broken up into separate documents. Please follow to access them.</p>
+<div class="section" id="station">
+<h3>Station<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#station" title="Permalink to this headline">¶</a></h3>
+<p>Station (STA) mode is used to get ESP module connected to a Wi-Fi network established by an access point.</p>
+<div class="figure" id="id4">
+<img alt="ESP8266 operating in the Station mode" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/esp8266-station.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>Station class has several features to facilitate management of Wi-Fi connection. In case the connection is lost, ESP8266 will automatically reconnect to the last used access point, once it is again available. The same happens on module reboot. This is possible since ESP is saving credentials to last used access point in flash (non-volatile) memory. Using the saved data ESP will also reconnect if sketch has been changed but code does not alter the Wi-Fi mode or credentials.</p>
+<p><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/station-class.html"><span class="doc">Station Class documentation</span></a></p>
+<p>Check out separate section with <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/station-examples.html"><span class="doc">examples</span></a>.</p>
+</div>
+<div class="section" id="soft-access-point">
+<h3>Soft Access Point<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#soft-access-point" title="Permalink to this headline">¶</a></h3>
+<p>An <a class="reference external" href="https://en.wikipedia.org/wiki/Wireless_access_point">access point (AP)</a> is a device that provides access to Wi-Fi network to other devices (stations)
+and connects them further to a wired network. ESP8266 can provide similar functionality except it does not have interface to a wired network. Such mode of operation is called soft access point (soft-AP). The maximum number of stations connected to the soft-AP is five.</p>
+<div class="figure" id="id5">
+<img alt="ESP8266 operating in the Soft Access Point mode" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/esp8266-soft-access-point.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>The soft-AP mode is often used and an intermediate step before connecting ESP to a Wi-Fi in a station mode. This is when SSID and password to such network is not known upfront. ESP first boots in soft-AP mode, so we can connect to it using a laptop or a mobile phone. Then we are able to provide credentials to the target network. Once done ESP is switched to the station mode and can connect to the target Wi-Fi.</p>
+<p>Another handy application of soft-AP mode is to set up <a class="reference external" href="https://en.wikipedia.org/wiki/Mesh_networking">mesh networks</a>. ESP can operate in both soft-AP and Station mode so it can act as a node of a mesh network.</p>
+<p><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/soft-access-point-class.html"><span class="doc">Soft Access Point Class documentation</span></a></p>
+<p>Check out separate section with <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/soft-access-point-examples.html"><span class="doc">examples</span></a>.</p>
+</div>
+<div class="section" id="scan">
+<h3>Scan<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#scan" title="Permalink to this headline">¶</a></h3>
+<p>To connect a mobile phone to a hot spot, you typically open Wi-Fi settings app, list available networks and pick the hot spot you need. Then enter a password (or not) and you are in. You can do the same with ESP. Functionality of scanning for, and listing of available networks in range is implemented by the Scan Class.</p>
+<p><a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/scan-class.html"><span class="doc">Scan Class documentation</span></a>.</p>
+<p>Check out separate section with <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/scan-examples.html"><span class="doc">examples</span></a>.</p>
+</div>
+<div class="section" id="client">
+<h3>Client<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#client" title="Permalink to this headline">¶</a></h3>
+<p>The Client class creates <a class="reference external" href="https://en.wikipedia.org/wiki/Client_(computing)">clients</a> that can access services provided by <a class="reference external" href="https://en.wikipedia.org/wiki/Server_(computing)">servers</a> in order to send, receive and process data.</p>
+<div class="figure" id="id6">
+<img alt="ESP8266 operating as the Client" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/esp8266-client.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>Check out separate section with <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/client-examples.html"><span class="doc">examples</span></a> / <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/client-class.html"><span class="doc">list of functions</span></a></p>
+</div>
+<div class="section" id="client-secure">
+<h3>Client Secure<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#client-secure" title="Permalink to this headline">¶</a></h3>
+<p>The Client Secure is an extension of <a class="reference external" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#client">Client Class</a> where connection and data exchange with servers is done using a <a class="reference external" href="https://en.wikipedia.org/wiki/Transport_Layer_Security">secure protocol</a>. It supports <a class="reference external" href="https://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_1.1">TLS 1.1</a>. The <a class="reference external" href="https://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_1.2">TLS 1.2</a> is not supported.</p>
+<div class="figure" id="id7">
+<img alt="ESP8266 operating as the Client Secure" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/esp8266-client-secure.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>Secure applications have additional memory (and processing) overhead due to the need to run cryptography algorithms. The stronger the certificate’s key, the more overhead is needed. In practice it is not possible to run more than a single secure client at a time. The problem concerns RAM memory we can not add, the flash memory size is usually not the issue. If you like to learn how <a class="reference external" href="https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266WiFi/src/WiFiClientSecure.h">client secure library</a> has been developed, access to what servers have been tested, and how memory limitations have been overcame, read fascinating issue report <a class="reference external" href="https://github.com/esp8266/Arduino/issues/43">#43</a>.</p>
+<p>Check out separate section with <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/client-secure-examples.html"><span class="doc">examples</span></a> / <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/client-secure-class.html"><span class="doc">list of functions</span></a></p>
+</div>
+<div class="section" id="server">
+<h3>Server<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#server" title="Permalink to this headline">¶</a></h3>
+<p>The Server Class creates <a class="reference external" href="https://en.wikipedia.org/wiki/Server_(computing)">servers</a> that provide functionality to other programs or devices, called <a class="reference external" href="https://en.wikipedia.org/wiki/Client_(computing)">clients</a>.</p>
+<div class="figure" id="id8">
+<img alt="ESP8266 operating as the Server" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/esp8266-server.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>Clients connect to sever to send and receive data and access provided functionality.</p>
+<p>Check out separate section with <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/server-examples.html"><span class="doc">examples</span></a> / <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/server-class.html"><span class="doc">list of functions</span></a>.</p>
+</div>
+<div class="section" id="udp">
+<h3>UDP<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#udp" title="Permalink to this headline">¶</a></h3>
+<p>The UDP Class enables the <a class="reference external" href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">User Datagram Protocol (UDP)</a> messages to be sent and received. The UDP uses a simple “fire and forget” transmission model with no guarantee of delivery, ordering, or duplicate protection. UDP provides checksums for data integrity, and port numbers for addressing different functions at the source and destination of the datagram.</p>
+<p>Check out separate section with <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/udp-examples.html"><span class="doc">examples</span></a> / <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/udp-class.html"><span class="doc">list of functions</span></a>.</p>
+</div>
+<div class="section" id="generic">
+<h3>Generic<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#generic" title="Permalink to this headline">¶</a></h3>
+<p>There are several functions offered by ESP8266’s <a class="reference external" href="http://bbs.espressif.com/viewtopic.php?f=51&amp;t=1023">SDK</a> and not present in <a class="reference external" href="https://www.arduino.cc/en/Reference/WiFi">Arduino WiFi library</a>. If such function does not fit into one of classes discussed above, it will likely be in Generic Class. Among them is handler to manage Wi-Fi events like connection, disconnection or obtaining an IP, Wi-Fi mode changes, functions to manage module sleep mode, hostname to an IP address resolution, etc.</p>
+<p>Check out separate section with <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/generic-examples.html"><span class="doc">examples</span></a> / <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/generic-class.html"><span class="doc">list of functions</span></a>.</p>
+</div>
+</div>
+<div class="section" id="diagnostics">
+<h2>Diagnostics<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#diagnostics" title="Permalink to this headline">¶</a></h2>
+<p>There are several techniques available to diagnose and troubleshoot issues with getting connected to Wi-Fi and keeping connection alive.</p>
+<div class="section" id="check-return-codes">
+<h3>Check Return Codes<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#check-return-codes" title="Permalink to this headline">¶</a></h3>
+<p>Almost each function described in chapters above returns some diagnostic information.</p>
+<p>Such diagnostic may be provided as a simple <code class="docutils literal"><span class="pre">boolean</span></code> type <code class="docutils literal"><span class="pre">true'</span> <span class="pre">or</span></code>false` to indicate operation result. You may check this result as described in examples, for instance:</p>
+<div class="code cpp highlight-default"><div class="highlight"><pre><span></span>Serial.printf("Wi-Fi mode set to WIFI_STA %s\n", WiFi.mode(WIFI_STA) ? "" : "Failed!");
+</pre></div>
+</div>
+<p>Some functions provide more than just a binary status information. A good example is <code class="docutils literal"><span class="pre">WiFi.status()</span></code>.</p>
+<div class="code cpp highlight-default"><div class="highlight"><pre><span></span><span class="n">Serial</span><span class="o">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">"Connection status: </span><span class="si">%d</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">WiFi</span><span class="o">.</span><span class="n">status</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>This function returns following codes to describe what is going on with Wi-Fi connection:</p>
+<ul class="simple">
+<li>0 : <code class="docutils literal"><span class="pre">WL_IDLE_STATUS</span></code> when Wi-Fi is in process of changing between statuses</li>
+<li>1 : <code class="docutils literal"><span class="pre">WL_NO_SSID_AVAIL</span></code>in case configured SSID cannot be reached</li>
+<li>3 : <code class="docutils literal"><span class="pre">WL_CONNECTED</span></code> after successful connection is established</li>
+<li>4 : <code class="docutils literal"><span class="pre">WL_CONNECT_FAILED</span></code> if password is incorrect</li>
+<li>6 : <code class="docutils literal"><span class="pre">WL_DISCONNECTED</span></code> if module is not configured in station mode</li>
+</ul>
+<p>It is a good practice to display and check information returned by functions. Application development and troubleshooting will be easier with that.</p>
+</div>
+<div class="section" id="use-printdiag">
+<h3>Use printDiag<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#use-printdiag" title="Permalink to this headline">¶</a></h3>
+<p>There is a specific function available to print out key Wi-Fi diagnostic information:</p>
+<div class="code cpp highlight-default"><div class="highlight"><pre><span></span><span class="n">WiFi</span><span class="o">.</span><span class="n">printDiag</span><span class="p">(</span><span class="n">Serial</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>A sample output of this function looks as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>Mode: STA+AP
+PHY mode: N
+Channel: 11
+AP id: 0
+Status: 5
+Auto connect: 1
+SSID (10): sensor-net
+Passphrase (12): 123!$#0&amp;*esP
+BSSID set: 0
+</pre></div>
+</div>
+<p>Use this function to provide snapshot of Wi-Fi status in these parts of application code, that you suspect may be failing.</p>
+</div>
+<div class="section" id="enable-wi-fi-diagnostic">
+<h3>Enable Wi-Fi Diagnostic<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#enable-wi-fi-diagnostic" title="Permalink to this headline">¶</a></h3>
+<p>By default the diagnostic output from Wi-Fi libraries is disabled when you call <code class="docutils literal"><span class="pre">Serial.begin</span></code>. To enable debug output again, call <code class="docutils literal"><span class="pre">Serial.setDebugOutput(true)</span></code>. To redirect debug output to <code class="docutils literal"><span class="pre">Serial1</span></code> instead, call <code class="docutils literal"><span class="pre">Serial1.setDebugOutput(true)</span></code>. For additional details regarding diagnostics using serial ports please refer to <a class="reference internal" href="http://arduino-esp8266.readthedocs.io/en/latest/reference.html"><span class="doc">the documentation</span></a>.</p>
+<p>Below is an example of output for sample sketch discussed in <a class="reference external" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#quick-start">Quick Start</a> above with <code class="docutils literal"><span class="pre">Serial.setDebugOutput(true)</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Connectingscandone</span>
+<span class="n">state</span><span class="p">:</span> <span class="mi">0</span> <span class="o">-&gt;</span> <span class="mi">2</span> <span class="p">(</span><span class="n">b0</span><span class="p">)</span>
+<span class="n">state</span><span class="p">:</span> <span class="mi">2</span> <span class="o">-&gt;</span> <span class="mi">3</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">state</span><span class="p">:</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">5</span> <span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">add</span> <span class="mi">0</span>
+<span class="n">aid</span> <span class="mi">1</span>
+<span class="n">cnt</span>
+
+<span class="n">connected</span> <span class="k">with</span> <span class="n">sensor</span><span class="o">-</span><span class="n">net</span><span class="p">,</span> <span class="n">channel</span> <span class="mi">6</span>
+<span class="n">dhcp</span> <span class="n">client</span> <span class="n">start</span><span class="o">...</span>
+<span class="n">chg_B1</span><span class="p">:</span><span class="o">-</span><span class="mi">40</span>
+<span class="o">...</span><span class="n">ip</span><span class="p">:</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.10</span><span class="p">,</span><span class="n">mask</span><span class="p">:</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span><span class="p">,</span><span class="n">gw</span><span class="p">:</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.9</span>
+<span class="o">.</span>
+<span class="n">Connected</span><span class="p">,</span> <span class="n">IP</span> <span class="n">address</span><span class="p">:</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.10</span>
+</pre></div>
+</div>
+<p>The same sketch without <code class="docutils literal"><span class="pre">Serial.setDebugOutput(true)</span></code> will print out only the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Connecting</span><span class="o">....</span>
+<span class="n">Connected</span><span class="p">,</span> <span class="n">IP</span> <span class="n">address</span><span class="p">:</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-debugging-in-ide">
+<h3>Enable Debugging in IDE<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#enable-debugging-in-ide" title="Permalink to this headline">¶</a></h3>
+<p>Arduino IDE provides convenient method to <a class="reference external" href="https://github.com/esp8266/Arduino/blob/master/doc/Troubleshooting/debugging.md">enable debugging</a> for specific libraries.</p>
+</div>
+</div>
+<div class="section" id="what-s-inside">
+<h2>What’s Inside?<a class="headerlink" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#what-s-inside" title="Permalink to this headline">¶</a></h2>
+<p>If you like to analyze in detail what is inside of the ESP8266WiFi library, go directly to the <a class="reference external" href="https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi/src">ESP8266WiFi</a> folder of esp8266 / Arduino repository on the GitHub.</p>
+<p>To make the analysis easier, rather than looking into individual header or source files, use one of free tools to automatically generate documentation. The class index in chapter <a class="reference external" href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/class-description">Class Description</a> above has been prepared in no time using great <a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>, that is the de facto standard tool for generating documentation from annotated C++ sources.</p>
+<div class="figure" id="id9">
+<img alt="Example of documentation prepared by Doxygen" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/doxygen-esp8266wifi-documentation.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>The tool crawls through all header and source files collecting information from formatted comment blocks. If developer of particular class annotated the code, you will see it like in examples below.</p>
+<div class="figure" id="id10">
+<img alt="Example of documentation for station begin method by Doxygen" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/doxygen-example-station-begin.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<div class="figure" id="id11">
+<img alt="Example of documentation for station hostname propert by Doxygen" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/doxygen-example-station-hostname.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>If code is not annotated, you will still see the function prototype including types of arguments, and can use provided links to jump straight to the source code to check it out on your own. Doxygen provides really excellent navigation between members of library.</p>
+<div class="figure" id="id12">
+<img alt="Example of documentation for UDP begin method (not annotaed in code)by Doxygen" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/doxygen-example-udp-begin.png">
+<p class="caption"><span class="caption-text">alt text</span></p>
+</div>
+<p>Several classes of <a class="reference external" href="https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi">ESP8266WiFi</a> are not annotated. When preparing this document, <a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a> has been tremendous help to quickly navigate through almost 30 files that make this library.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="http://arduino-esp8266.readthedocs.io/en/latest/ota_updates/readme.html" class="btn btn-neutral float-right" title="OTA Updates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="http://arduino-esp8266.readthedocs.io/en/latest/filesystem.html" class="btn btn-neutral" title="Filesystem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>
+        © Copyright 2017, Ivan Grokhotkov.
+      
+        <span class="commit">
+          Revision <code>3f5d06bc</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="http://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html">latest</a></dd>
+         </strong> 
+        
+        
+        <dd><a href="http://arduino-esp8266.readthedocs.io/en/stable/esp8266wifi/readme.html">stable</a></dd>
+        
+        
+        
+        <dd><a href="http://arduino-esp8266.readthedocs.io/en/2.4.0-rc1/esp8266wifi/readme.html">2.4.0-rc1</a></dd>
+        
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="http://readthedocs.org/projects/arduino-esp8266/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="http://readthedocs.org/projects/arduino-esp8266/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="http://readthedocs.org/projects/arduino-esp8266/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="http://readthedocs.org/projects/arduino-esp8266/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="http://readthedocs.org/projects/arduino-esp8266/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="http://readthedocs.org/projects/arduino-esp8266/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/esp8266/Arduino/blob/master/doc/esp8266wifi/readme.rst">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/esp8266/Arduino/edit/master/doc/esp8266wifi/readme.rst">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="https://readthedocs.org/projects/arduino-esp8266/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+      Free document hosting provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/jquery-2.0.3.min.js"></script>
+      <script type="text/javascript" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/jquery-migrate-1.2.1.min.js"></script>
+      <script type="text/javascript" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/underscore.js"></script>
+      <script type="text/javascript" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/doctools.js"></script>
+      <script type="text/javascript" src="./ESP8266WiFi library — ESP8266 Arduino Core 2.4.0 documentation_files/readthedocs-doc-embed.js"></script>
+
+  
+
+  
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+
+</body></html>
